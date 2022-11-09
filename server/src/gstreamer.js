@@ -54,9 +54,9 @@ module.exports = class GStreamer {
       console.log('gstreamer::process::stderr::data [data:%o]', data)
     );
 
-    this._process.stdout.on('data', data =>
-      console.log('gstreamer::process::stdout::data [data:%o]', data)
-    );
+    // this._process.stdout.on('data', data =>
+    //   console.log('gstreamer::process::stdout::data [data:%o]', data)
+    // );
   }
 
   kill () {
@@ -75,7 +75,9 @@ module.exports = class GStreamer {
     commandArgs = commandArgs.concat(this._audioArgs);
     commandArgs = commandArgs.concat(this._sinkArgs);
     commandArgs = commandArgs.concat(this._rtcpArgs);
-
+    
+    console.log('==================== commandArgs =====================');
+    console.log(commandArgs);
     return commandArgs;
   }
 
@@ -144,7 +146,7 @@ module.exports = class GStreamer {
     return [
       'webmmux name=mux',
       '!',
-      `filesink location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.webm`
+      `filesink location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.mp4`
     ];
   }
 }
