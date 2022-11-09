@@ -11,8 +11,8 @@ module.exports = Object.freeze({
       'srtp',
       'rtcp',
     ],
-    rtcMinPort: 40000,
-    rtcMaxPort: 49999
+    rtcMinPort: 10000,
+    rtcMaxPort: 10100
   },
   router: {
     mediaCodecs: [
@@ -53,14 +53,14 @@ module.exports = Object.freeze({
     ]
   },
   webRtcTransport: {
-    listenIps: [ { ip: '0.0.0.0', announcedIp: '192.168.0.100' } ], // TODO: Change announcedIp to your external IP or domain name
+    listenIps: [ { ip: '0.0.0.0', announcedIp: '161.189.43.94' } ], // TODO: Change announcedIp to your external IP or domain name
     enableUdp: true,
     enableTcp: true,
     preferUdp: true,
     maxIncomingBitrate: 1500000
   },
   plainRtpTransport: {
-    listenIp: { ip: '0.0.0.0', announcedIp: '192.168.0.100' }, // TODO: Change announcedIp to your external IP or domain name
+    listenIp: { ip: '0.0.0.0', announcedIp: '161.189.43.94' }, // TODO: Change announcedIp to your external IP or domain name
     rtcpMux: true,
     comedia: false
   }
