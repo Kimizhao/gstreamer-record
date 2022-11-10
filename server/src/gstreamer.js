@@ -67,12 +67,12 @@ module.exports = class GStreamer {
   // Build the gstreamer child process args
   get _commandArgs () {
     let commandArgs = [
-      `rtpbin name=rtpbin latency=50 buffer-mode=0 sdes="application/x-rtp-source-sdes, cname=(string)${this._rtpParameters.video.rtpParameters.rtcp.cname}"`,
+      `rtpbin name=rtpbin latency=50 buffer-mode=0 sdes="application/x-rtp-source-sdes, cname=(string)2333ers"`,
       '!'
     ];
 
     commandArgs = commandArgs.concat(this._videoArgs);
-    commandArgs = commandArgs.concat(this._audioArgs);
+    // commandArgs = commandArgs.concat(this._audioArgs);
     commandArgs = commandArgs.concat(this._sinkArgs);
     commandArgs = commandArgs.concat(this._rtcpArgs);
     
@@ -146,7 +146,7 @@ module.exports = class GStreamer {
     return [
       'webmmux name=mux',
       '!',
-      `filesink location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.mp4`
+      `filesink location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.webm`
     ];
   }
 }
