@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mediasoup-client": "^3.6.48"
+    "mediasoup-client": "^3.6.53"
   },
   "devDependencies": {
     "os-browserify": "^0.3.0",

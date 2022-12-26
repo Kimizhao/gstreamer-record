@@ -18,11 +18,12 @@ const {
 } = require('./port');
 
 const PROCESS_NAME = process.env.PROCESS_NAME || 'FFmpeg';
-const SERVER_PORT = process.env.SERVER_PORT || 60105;
+const SERVER_PORT = process.env.SERVER_PORT || 4443;
 const HTTPS_OPTIONS = Object.freeze({
-  cert: fs.readFileSync('./ssl/server.crt'),
-  key: fs.readFileSync('./ssl/server.key')
+  cert: fs.readFileSync('./ssl/fullchain.pem'),
+  key: fs.readFileSync('./ssl/privkey.pem')
 });
+
 
 const httpsServer = https.createServer(HTTPS_OPTIONS);
 const wss = new WebSocket.Server({ server: httpsServer });

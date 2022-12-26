@@ -64,6 +64,7 @@ npm run dev
 ### Access the sample page
 https://localhost:8080
 
+## 用chrome浏览器打开提示websocket连接失败，而用Edge浏览器打开不会
 
 By default recorded videos will be available in `server/files` directory.
 

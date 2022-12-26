@@ -54,9 +54,9 @@ module.exports = class GStreamer {
       console.log('gstreamer::process::stderr::data [data:%o]', data)
     );
 
-    // this._process.stdout.on('data', data =>
+    //this._process.stdout.on('data', data =>
     //   console.log('gstreamer::process::stdout::data [data:%o]', data)
-    // );
+    //);
   }
 
   kill () {
@@ -71,7 +71,7 @@ module.exports = class GStreamer {
       '!'
     ];
 
-    // commandArgs = commandArgs.concat(this._videoArgs);
+    commandArgs = commandArgs.concat(this._videoArgs);
     commandArgs = commandArgs.concat(this._audioArgs);
     commandArgs = commandArgs.concat(this._sinkArgs);
     commandArgs = commandArgs.concat(this._rtcpArgs);
